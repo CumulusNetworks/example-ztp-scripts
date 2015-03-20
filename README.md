@@ -7,6 +7,12 @@ This repo contains example zero touch provisioning (ZTP) scripts for Cumulus Lin
 
 Documentation on how the ZTP process works in Cumulus Linux is available here: http://docs.cumulusnetworks.com/display/CL25/Zero+Touch+Provisioning
 
+Scripts are included for these tools:
+
+* Ansible
+* Chef
+* Puppet
+
 ## Usage
 
 ### In your own network
