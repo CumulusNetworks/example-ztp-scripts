@@ -28,8 +28,12 @@ In the [workbench](http://cumulusnetworks.com/cumulus-workbench/) during the set
 
 Then the relevant script is symlink to /var/www/provision.sh 
 
-TODO: example
-
+```
+root@wbench:/var/www# ls -l
+total 871960
+drwxr-xr-x 3 root root      4096 Mar 20 03:36 example-ztp-scripts
+lrwxrwxrwx 1 root root        33 Mar 20 03:37 provision.sh -> example-ztp-scripts/ztp-puppet.sh
+```
 ---
 
 ![Cumulus icon](http://cumulusnetworks.com/static/cumulus/img/logo_2014.png)
