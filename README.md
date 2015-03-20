@@ -17,11 +17,14 @@ Scripts are included for these tools:
 
 ### In your own network
 
-TODO
+Clone or copy these scripts to your management webserver.
+
+Edit the paths to specify the location of your SSH public keys.
 
 ### Within the Cumulus Workbench
 
-Duing the setup process this git repo is cloned to /var/www/example-ztp-scripts.
+
+In the [workbench](http://cumulusnetworks.com/cumulus-workbench/) during the setup process this git repo is cloned to /var/www/example-ztp-scripts.
 
 Then the relevant script is symlink to /var/www/provision.sh 
 
