@@ -24,15 +24,14 @@ Edit the paths to specify the location of your SSH public keys.
 ### Within the Cumulus Workbench
 
 
-In the [workbench](http://cumulusnetworks.com/cumulus-workbench/) during the setup process this git repo is cloned to /var/www/example-ztp-scripts.
+In the [workbench](http://cumulusnetworks.com/cumulus-workbench/) during the setup process this git repo is cloned to /home/cumulus/example-ztp-scripts.
 
 Then the relevant script is symlink to /var/www/provision.sh 
 
 ```
 root@wbench:/var/www# ls -l
 total 871960
-drwxr-xr-x 3 root root      4096 Mar 20 03:36 example-ztp-scripts
-lrwxrwxrwx 1 root root        33 Mar 20 03:37 provision.sh -> example-ztp-scripts/ztp-puppet.sh
+lrwxrwxrwx 1 root root        33 Mar 20 03:37 provision.sh -> /home/cumulus/example-ztp-scripts/ztp-puppet.sh
 ```
 ---
 
