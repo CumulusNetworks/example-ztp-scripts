@@ -26,7 +26,6 @@ $(rm -f /var/lib/apt/lists/partial/* /var/lib/apt/lists/* 2>/dev/null; true)
 
 # Upgrade and install Chef
 apt-get update -y
-apt-get upgrade -y
 
 apt-get install curl chef -y
 
