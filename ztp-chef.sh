@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# Allow Cumulus testing repo
-#sed -i /etc/apt/sources.list -e 's/# deb http:\/\/repo.cumulusnetworks.com CumulusLinux-2.1 testing/deb http:\/\/repo.cumulusnetworks.com CumulusLinux-2.1 testing/'
 
 function error() {
   echo -e "\e[0;33mERROR: Provisioning error running $BASH_COMMAND at line $BASH_LINENO of $(basename $0) \e[0m" >&2
@@ -12,6 +10,9 @@ exec >/var/log/autoprovision 2>&1
 
 trap error ERR
 
+# Allow Cumulus 3rdparty repo
+echo -e "deb http://cldemo.cumulusnetworks.com/3rdparty-testing 3rdparty workbench" >> /etc/apt/sources.list
+
 # push root & cumulus ssh keys
 URL="http://wbench.lab.local/authorized_keys"
 
@@ -20,9 +21,6 @@ mkdir -p /root/.ssh
 mkdir -p /home/cumulus/.ssh
 /usr/bin/wget -O /home/cumulus/.ssh/authorized_keys $URL
 chown -R cumulus:cumulus /home/cumulus/.ssh
-
-# Workaround for CM-3812; clean out the apt cache before we run apt-get update
-$(rm -f /var/lib/apt/lists/partial/* /var/lib/apt/lists/* 2>/dev/null; true)
 
 # Upgrade and install Chef
 apt-get update -y
