@@ -33,6 +33,7 @@ echo "Configuring Chef" | wall -n
 [[ -d /etc/chef ]] || mkdir /etc/chef
 curl http://192.168.0.1/chef-validator.pem > /etc/chef/validation.pem || echo "Failed to download validation certificate"
 chmod 0400 /etc/chef/validation.pem
+chmod 0755 /etc/chef
 
 if [[ ! -f /etc/chef/client.rb ]]; then
   cat <<EOF >/etc/chef/client.rb
