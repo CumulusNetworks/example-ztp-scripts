@@ -24,13 +24,14 @@ chown -R cumulus:cumulus /home/cumulus/.ssh
 
 # Upgrade and install Chef
 apt-get update -y
-
-apt-get install curl chef -y
+apt-get install curl -y
+# Force chef to install Chef12 instead of Chef11
+apt-get -y --force-yes -t 3rdparty install chef
 
 echo "Configuring Chef" | wall -n
 
 [[ -d /etc/chef ]] || mkdir /etc/chef
-curl http://192.168.0.1/chef-validator.pem >/etc/chef/validation.pem || echo "Failed to download validation certificate"
+curl http://192.168.0.1/chef-validator.pem > /etc/chef/validation.pem || echo "Failed to download validation certificate"
 chmod 0400 /etc/chef/validation.pem
 
 if [[ ! -f /etc/chef/client.rb ]]; then
