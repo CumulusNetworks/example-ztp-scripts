@@ -47,6 +47,8 @@ if [[ ! -f /etc/chef/client.rb ]]; then
 EOF
 fi
 
+knife ssl fetch
+
 chef-client -o "recipe[cldemo_base::chef-client]" --once
 
 # CUMULUS-AUTOPROVISIONING
