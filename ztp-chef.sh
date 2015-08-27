@@ -24,9 +24,11 @@ chown -R cumulus:cumulus /home/cumulus/.ssh
 
 # Upgrade and install Chef
 apt-get update -y
-apt-get install curl -y
-# Force chef to install Chef12 instead of Chef11
-apt-get -y --force-yes -t 3rdparty install chef
+apt-get install curl ruby-dev -y --force-yes
+
+echo "Installing Chef takes a while. Go grab a coffee!" | wall -n
+# Chef12 doesn't have a PPC package
+gem install chef
 
 echo "Configuring Chef" | wall -n
 
