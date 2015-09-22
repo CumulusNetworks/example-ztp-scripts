@@ -9,9 +9,6 @@ exec >/var/log/autoprovision 2>&1
 
 trap error ERR
 
-# Workaround for CM-3812; clean out the apt cache before we run apt-get update
-$(rm -f /var/lib/apt/lists/partial/* /var/lib/apt/lists/* 2>/dev/null; true)
-
 URL="http://wbench.lab.local/authorized_keys"
 
 mkdir -p /root/.ssh
