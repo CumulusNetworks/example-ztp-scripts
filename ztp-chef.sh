@@ -21,9 +21,6 @@ mkdir -p /home/cumulus/.ssh
 /usr/bin/wget -O /home/cumulus/.ssh/authorized_keys $URL
 chown -R cumulus:cumulus /home/cumulus/.ssh
 
-# Workaround for CM-3812; clean out the apt cache before we run apt-get update
-$(rm -f /var/lib/apt/lists/partial/* /var/lib/apt/lists/* 2>/dev/null; true)
-
 # Upgrade and install Chef
 apt-get update -y
 
