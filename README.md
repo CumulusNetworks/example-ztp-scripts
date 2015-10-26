@@ -5,7 +5,7 @@
 
 This repo contains example zero touch provisioning (ZTP) scripts for Cumulus Linux, these can assist with [data center automation](http://cumulusnetworks.com/solutions/data-center-automation/).
 
-Documentation on how the ZTP process works in Cumulus Linux is available here: http://docs.cumulusnetworks.com/display/CL25/Zero+Touch+Provisioning
+Documentation on how the ZTP process works in Cumulus Linux is available here: http://docs.cumulusnetworks.com/display/DOCS/Zero+Touch+Provisioning+-+ZTP
 
 Scripts are included for these tools:
 
