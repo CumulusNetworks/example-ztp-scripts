@@ -28,7 +28,7 @@ apt-get install puppet -y
 echo "Configuring puppet" | wall -n
 #comment out templatedir in puppet 
 sed -i /etc/puppet/puppet.conf -e 's/^template/# template/'
-
+sed -i /etc/hosts -e "s/127.0.1.1  `hostname`/127.0.1.1   `hostname`   `hostname`.lab.local/"
 sed -i /etc/default/puppet -e 's/START=no/START=yes/'
 
 service puppet restart
